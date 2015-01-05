@@ -95,18 +95,18 @@ else:
 		#Metni okuma ve kaydetme için işlem başlatma
 		yazi = metin.get(1.0, END)
 		islem = asksaveasfile(mode="w", defaultextension=".txt")
-    islem.write(yazi)
-    islem.close()
+  	islem.write(yazi)
+  	islem.close()
 		#Geri bildirim penceresi
-    pen2 = Toplevel()
-    pen2.geometry("280x50+280+320")
-    baslik2 = pen2.title("Kaydedildi")
-    simge7 = PhotoImage(file="nd_kaydedildi.gif")
-    pen2.tk.call('wm', 'iconphoto', pen2._w, simge7)
-    kaydedildi = Label(pen2, text="Dosya basariyla kaydedildi.")
-    kaydedildi.pack()
-    kaydedildi_kapat = Button(pen2, text="Tamam", command=pen2.destroy, bg="light green", fg="dark blue")
-    kaydedildi_kapat.pack()
+  	pen2 = Toplevel()
+  	pen2.geometry("280x50+280+320")
+  	baslik2 = pen2.title("Kaydedildi")
+  	simge7 = PhotoImage(file="nd_kaydedildi.gif")
+  	pen2.tk.call('wm', 'iconphoto', pen2._w, simge7)
+  	kaydedildi = Label(pen2, text="Dosya basariyla kaydedildi.")
+  	kaydedildi.pack()
+  	kaydedildi_kapat = Button(pen2, text="Tamam", command=pen2.destroy, bg="light green", fg="dark blue")
+  	kaydedildi_kapat.pack()
 	#Yedekleme komutu
 	def yedekle():
 		#Metni okuma
@@ -166,28 +166,28 @@ else:
 		lisans_etiket.pack()
 		hakkinda_kapat = Button(pen6, text="Hakkinda'yi Kapat", command=pen6.destroy, bg="red", fg="white")
 		hakkinda_kapat.pack()
-	#Menüleri ayarlama
-	#Menü çubuğu oluştur
-	menu = Menu(pen)
-	#Menü çubuğunu pen penceresine tuttur
-	pen.config(menu=menu)
-	#Menü çubuğu menülerini oluştur
-  dosyaislemleri = Menu(menu, tearoff=0)
-	yedeklemeler = Menu(menu, tearoff=0)
-	yardim = Menu(menu, tearoff=0)
-	#Menüleri göster
-  menu.add_cascade(label="Dosya", menu=dosyaislemleri)
-	menu.add_cascade(label="Yedekler", menu=yedeklemeler)
-	menu.add_cascade(label="Yardim", menu=yardim)
-	#Menülere komutları tuttur
-  dosyaislemleri.add_command(label="Kaydet", command=kaydet)
-  dosyaislemleri.add_command(label="Dosya Ac", command=dosya_ac)
-  dosyaislemleri.add_command(label="Kapat", command=pen.quit)
-	yardim.add_command(label="Yardim", command=destek)
-	yardim.add_command(label="Hakkinda", command=hakkinda)
-	yedeklemeler.add_command(label="Yedekle", command=yedekle)
-	yedeklemeler.add_command(label="Yedegi Yukle", command=yedek_yukle)
-	#Kaydırma çubuğunu tamamla
-	cubuk.config(command=metin.yview)
-	#Grafiksel döngü oluştur
-	mainloop()
+#Menüleri ayarlama
+#Menü çubuğu oluştur
+menu = Menu(pen)
+#Menü çubuğunu pen penceresine tuttur
+pen.config(menu=menu)
+#Menü çubuğu menülerini oluştur
+dosyaislemleri = Menu(menu, tearoff=0)
+yedeklemeler = Menu(menu, tearoff=0)
+yardim = Menu(menu, tearoff=0)
+#Menüleri göster
+menu.add_cascade(label="Dosya", menu=dosyaislemleri)
+menu.add_cascade(label="Yedekler", menu=yedeklemeler)
+menu.add_cascade(label="Yardim", menu=yardim)
+#Menülere komutları tuttur
+dosyaislemleri.add_command(label="Kaydet", command=kaydet)
+dosyaislemleri.add_command(label="Dosya Ac", command=dosya_ac)
+dosyaislemleri.add_command(label="Kapat", command=pen.quit)
+yardim.add_command(label="Yardim", command=destek)
+yardim.add_command(label="Hakkinda", command=hakkinda)
+yedeklemeler.add_command(label="Yedekle", command=yedekle)
+yedeklemeler.add_command(label="Yedegi Yukle", command=yedek_yukle)
+#Kaydırma çubuğunu tamamla
+cubuk.config(command=metin.yview)
+#Grafiksel döngü oluştur
+mainloop()
