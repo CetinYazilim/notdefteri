@@ -73,6 +73,7 @@ if etkin_mi == 0 or etkin_mi == "0" or etkin_mi == "0\n":
 	anahtar_etkin.close()
 	mainloop()
 else:
+	#Not defteri kısmı burada başlıyor
 	#Pencereyi ayarlama
 	pen = Tk()
 	#Pencere rengi
